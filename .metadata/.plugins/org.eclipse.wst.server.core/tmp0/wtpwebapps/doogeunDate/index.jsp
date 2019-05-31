@@ -13,15 +13,17 @@
     <header id="header">
         <p>두근두근 데이트</p>
     </header>
-
-    <div class="login">
-        <h1>login</h1>
-        ID <input name="id">
-        PW <input name="password">
-        <input type="button" value="로그인">
-        <input type="button" value="회원가입">
-        <input type="button" value="아이디/비밀번호 찾기">
-    </div>
+    
+    <form action="login.jsp" method="post">
+    	<div class="login">
+	        <h1>login</h1>
+	        ID <input name="id">
+	        PW <input name="password">
+	        <input type="button" value="로그인">
+	        <input type="button" value="회원가입" onclick="location.href='joinForm.jsp'">
+	        <input type="button" value="아이디/비밀번호 찾기">
+    	</div>
+    </form>
 </body>
 
 </html>

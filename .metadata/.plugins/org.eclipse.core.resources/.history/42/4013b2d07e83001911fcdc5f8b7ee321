@@ -1,0 +1,24 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE HTML PUBLIC>
+<html>
+    <head>
+     <title>두근두근 데이트</title>
+     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+     <link rel="stylesheet" type="text/css" href="index.css" />
+    </head>
+    <body>
+        <header id="header">
+            <p>두근두근 데이트</p>
+        </header>
+		<form action="login.jsp" method="post">
+        <div class="login">
+            <h1>login</h1>
+            ID   <input type = "text" name="id"></p>
+            PW   <input type = "text" name="password"></p>
+            <input type="submit" value="로그인">
+            <input type="button" value="회원가입" onclick="location.href='joinForm.jsp'">
+        </div>
+		</form>
+    </body>
+</html>
