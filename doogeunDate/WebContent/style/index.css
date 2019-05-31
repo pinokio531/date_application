@@ -1,0 +1,16 @@
+body{
+    background:url(../asset/background.jpg);
+    background-size: 100%;
+}
+
+#header{
+    margin-left: 37%;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    font-family: 'Hi Melody', cursive;
+    font-size: 41pt;
+}
+.login{
+   margin-left: 42%;
+   margin-top: 13%; 
+}

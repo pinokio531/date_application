@@ -1,0 +1,19 @@
+body{
+    background-color:linen;
+}
+
+.content{
+	display: flex;
+}
+
+#map{
+	width: 40%;
+	height: 40%;
+    margin-left: 30%;
+    padding: 30px;
+}
+
+#category{
+    margin-left: 60%;
+    padding: 30px;
+}

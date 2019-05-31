@@ -1,0 +1,29 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>두근두근 데이트</title>
+<link rel="stylesheet" type="text/css" href="style/menu.css" />
+</head>
+<body>
+    <div class="title1">
+           지도
+    </div>
+    <div class="title2">
+      <ul>
+        <li>음식점(중복 선택 가능)</li>
+        한식<input type="checkbox" name="food" value="resturant">
+        양식<input type="checkbox" name="food" value="resturant">
+        중식<input type="checkbox" name="food" value="resturant">
+        일식<input type="checkbox" name="food" value="resturant">
+        기타<input type="checkbox" name="food" value="resturant">
+        <li>그 외 가고싶은 장소(중복 선택 가능)</li>
+        카페<input type="checkbox" name="place" value="destination">
+        노래방<input type="checkbox" name="place" value="destination">
+      </ul>
+      <p>지도에서 가고싶은 지역을 선택후 장소를 체크합니다.</p>
+    </div>
+   </body>
+</html>
