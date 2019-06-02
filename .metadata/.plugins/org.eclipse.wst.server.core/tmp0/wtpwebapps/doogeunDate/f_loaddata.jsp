@@ -14,9 +14,9 @@
 	double mLatitude = 1;
 	
 	String asd = "asd";
-Connection con = null;
-PreparedStatement pstmt = null;
-ResultSet rs = null;
+	Connection con = null;
+	PreparedStatement pstmt = null;
+	ResultSet rs = null;
 	%>
 <%
 	location = (String) request.getAttribute("location");

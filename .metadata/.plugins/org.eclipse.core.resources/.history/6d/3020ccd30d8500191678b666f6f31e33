@@ -50,6 +50,12 @@
 	좌표 : (<%= mLatitude %>, <%= mLongtitude %>)
 	<div id="mainContent">
 		<div id="map"></div>
+		<% while(rs.next()){
+		lo = Double.parseDouble(rs.getString("longtitude"));
+		la = Double.parseDouble(rs.getString("latitude"));
+	%>
+	<%= lo %>, <%= la %>
+	<% }%>
 	<script>
 	settingMap();
 	</script>
