@@ -1,0 +1,29 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<html lang="en">
+
+<head>
+	<meta charset="EUC-KR">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="style/index.css" />
+</head>
+
+<body>
+<%@include file = "f_loaddata.jsp" %>
+	<div id="header">
+		<p>두근두근 데이트</p>
+	</div>
+
+	<form action="f_login.jsp" method="post">
+		<div class="login">
+			<h1>login</h1>
+			ID <input name="id">
+			PW <input name="passwd">
+			<input type="submit" value="로그인">
+			<input type="button" value="회원가입" onclick="location.href='joinPage.jsp'">
+		</div>
+	</form>
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+body{
+    background:url(../asset/ompang.jpg);
+    background-size: 100%;
+    display: flex;
+    padding: 10% 20%;
+}
+
+#titleDIV{
+	margin-left: 10%;
+}
+
+#buttonsDIV{
+	margin-right: 10%;
+}

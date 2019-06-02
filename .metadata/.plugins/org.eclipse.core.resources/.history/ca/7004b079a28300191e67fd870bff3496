@@ -1,0 +1,5 @@
+body{
+    background:url(../asset/ompang.jpg);
+    background-size: 100%;
+    display: flex;
+}
