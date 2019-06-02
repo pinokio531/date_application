@@ -16,23 +16,17 @@
 	<script>
 	window.onload = function () {
 	}
-
 	function settingMap() {
-		<%
-		rslo = Double.parseDouble(rs.getString("longtitude"));
-		rsla = Double.parseDouble(rs.getString("latitude"));
-		%>
 		var container = document.getElementById('map');
-
 		var options = {
-			center: new daum.maps.LatLng(<%=rslo%>, <%=rsla%>),
+			center: new daum.maps.LatLng(<%= mLatitude%>, <%= mLongtitude%>),
 			level: 3
 		};
 		var map = new daum.maps.Map(container, options);
 		<% while(rs.next()){
-			rs2lo = Double.parseDouble(rs2.getString("longtitude"));
-			rs2la = Double.parseDouble(rs2.getString("latitude")); %>
-			var rcLocation = new daum.maps.LatLng(<%= rs2lo%>, <%= rs2la%>);
+			rs2lo = Double.parseDouble(rs.getString("longtitude"));
+			rs2la = Double.parseDouble(rs.getString("latitude")); %>
+			var rcLocation = new daum.maps.LatLng(<%= rs2la%>, <%= rs2lo%>);
 			var mkLocation = new daum.maps.Marker(
 				{
 					position: rcLocation
@@ -52,9 +46,8 @@
 <body>
 	<%! Double lo = 0.0;
 		Double la = 0.0;%>
-	<%= location %>
-	<%= mLongtitude %>
-	<%= mLatitude %>
+	장소 : <%= location %> <br>
+	좌표 : (<%= mLatitude %>, <%= mLongtitude %>)
 	<div id="mainContent">
 		<div id="map"></div>
 		<% while(rs.next()){

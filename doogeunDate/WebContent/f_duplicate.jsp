@@ -4,6 +4,5 @@
 <%@ page import ="java.sql.*" %>
 <%!
 	String inputId = "";
-String inputPW = "";
-
-	%>
+	String inputPW = "";
+%>

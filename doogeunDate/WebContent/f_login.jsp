@@ -43,11 +43,11 @@
 <%
 	}
 } else {
-	%>
+%>
 <script>
 	alert('아이디없음');
 	history.back();
 </script>
 <%
 }
-	%>
+%>

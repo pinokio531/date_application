@@ -9,22 +9,17 @@
 	String dbId="root";
 	String dbPw="as097531";
 	String query1="SELECT * FROM villageData WHERE villageName = ? ";
-	String query2="SELECT * FROM shopdb WHERE ? < longtitude < ? AND ? < latitude < ? ";
+	String query2="SELECT * FROM shopdb where ? < longtitude and longtitude < ? and ? < latitude and latitude < ?;";
 	double mLongtitude = 1;
 	double mLatitude = 1;
 	
 	String asd = "asd";
-
-
-
-Connection con = null;
-PreparedStatement pstmt = null;
-ResultSet rs = null;
-ResultSet rs2 = null;
+	Connection con = null;
+	PreparedStatement pstmt = null;
+	ResultSet rs = null;
 	%>
 <%
 	location = (String) request.getAttribute("location");
-
 	Class.forName(driver);//JDBC드라이버가 실제로 적용되는 부분
 	con = DriverManager.getConnection(url, dbId, dbPw);
 	
@@ -43,7 +38,7 @@ ResultSet rs2 = null;
 			pstmt.setDouble(3, mLatitude - 0.01);
 			pstmt.setDouble(4, mLatitude + 0.01);
 			
-			rs2=pstmt.executeQuery();
+			rs=pstmt.executeQuery();
 			
 		}
 	}
