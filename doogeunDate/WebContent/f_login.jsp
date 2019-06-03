@@ -47,6 +47,8 @@
 <script>
 	alert('아이디없음');
 	history.back();
+	var test = document.getElementsByName('ddd');
+	var aaa = test.values
 </script>
 <%
 }

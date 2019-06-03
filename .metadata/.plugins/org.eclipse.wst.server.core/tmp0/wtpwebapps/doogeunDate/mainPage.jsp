@@ -16,6 +16,10 @@
 	<script>
 	window.onload = function () {
 	}
+	function aa(){
+		alert("aa");
+		document.location.href='./mainPage.jsp'; 
+	}
 	function settingMap() {
 		var container = document.getElementById('map');
 		var options = {
@@ -68,6 +72,22 @@
 			<p>지도에서 가고싶은 지역을 선택후 장소를 체크합니다.</p>
 		</div>
 	</div>
+	<%
+	if(rset.next()){
+		String bt_first = rset.getString("villageName");
+	%>
+		<form action="f_bt_location.jsp" method="get">
+		<input type="submit" name="clicked_location" value=<%=bt_first %>>
+	</form>
+	<%
+		while(rset.next()){
+			vName = rset.getString("villageName");%>
+			<form action="f_bt_location.jsp" method="get">
+				<input type="submit" name="clicked_location" value="<%=vName %>">
+			</form>
+			<%
+		}
+	}%>
 </body>
 
 </html>

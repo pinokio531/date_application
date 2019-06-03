@@ -17,11 +17,20 @@
 	Connection con = null;
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
+	
+	String query3="SELECT * FROM villageData";
+	String vName = "init";
+	ResultSet rset = null;
+	PreparedStatement pstmt2 = null;
 	%>
 <%
 	location = (String) request.getAttribute("location");
 	Class.forName(driver);//JDBC드라이버가 실제로 적용되는 부분
 	con = DriverManager.getConnection(url, dbId, dbPw);
+pstmt2 = con.prepareStatement(query3);
+	
+	rset=pstmt2.executeQuery();
+	//////////////////////
 	
 	pstmt = con.prepareStatement(query1);
 	pstmt.setString(1, location);
@@ -33,14 +42,16 @@
 			mLongtitude = Double.parseDouble(rs.getString("longtitude"));
 			mLatitude = Double.parseDouble(rs.getString("latitude"));
 			pstmt = con.prepareStatement(query2);
-			pstmt.setDouble(1, mLongtitude - 0.01);
-			pstmt.setDouble(2, mLongtitude + 0.01);
-			pstmt.setDouble(3, mLatitude - 0.01);
-			pstmt.setDouble(4, mLatitude + 0.01);
+			pstmt.setDouble(1, mLongtitude - 0.001);
+			pstmt.setDouble(2, mLongtitude + 0.001);
+			pstmt.setDouble(3, mLatitude - 0.001);
+			pstmt.setDouble(4, mLatitude + 0.001);
 			
 			rs=pstmt.executeQuery();
 			
 		}
 	}
+	
+
 	
 	%>
