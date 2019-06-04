@@ -1,0 +1,49 @@
+body{
+    background-image:url(../asset/background.jpg);
+    background-size: 100%;
+}
+
+#header{
+    text-align: center;
+    padding: 20px;
+    font-family: 'Nanum Brush Script', cursive;
+    font-size: 60pt;
+    letter-spacing: 5px;
+    color: pink;
+}
+
+.container{
+    height: 80%;
+    margin: 0 auto;
+}
+
+.blank{
+    float: left;
+    width: 65%;
+    height: 80%;
+}
+
+.footer{
+    padding-top: 400px;
+    text-align: center;
+    font-size: 13pt;
+}
+
+.login{
+    float: right;
+    margin:10px;
+    width: 35%;
+    height: 80%;
+    font-family: 'Nanum Brush Script', cursive;
+    font-size: 30px;
+}
+
+.button{
+    margin: 10px;
+    text-align:center;
+}
+
+.footer p {
+    font-weight: bold;
+}
+

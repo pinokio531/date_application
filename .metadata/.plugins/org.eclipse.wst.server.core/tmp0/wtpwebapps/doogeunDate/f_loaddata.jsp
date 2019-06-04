@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <% request.setCharacterEncoding("utf-8"); %>
 <%@ page import ="java.sql.*" %>
+<%@ page errorPage = "error/errorpage.jsp" %>
 <%!
 	String location = "구월동";
 	String driver="com.mysql.jdbc.Driver";//mysql jdbc드라이버(필수)
