@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ page errorPage = "error/errorpage.jsp" %>
 <html>
 
 <head>
@@ -212,6 +213,9 @@
 			}
 			}
 		%>
+	</div>
+	<div>
+	<input type="button" value="logout" onclick="location.href='f_logout.jsp'">
 	</div>
 </body>
 

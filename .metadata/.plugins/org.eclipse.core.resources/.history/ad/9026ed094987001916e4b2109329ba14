@@ -214,9 +214,6 @@
 			}
 		%>
 	</div>
-	<div>
-	<input type="button" value="logout" onclick="location.href='f_logout.jsp'">
-	</div>
 </body>
 
 </html>
