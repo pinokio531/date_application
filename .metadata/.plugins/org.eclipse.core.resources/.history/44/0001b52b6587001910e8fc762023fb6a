@@ -163,18 +163,14 @@
 	Double la = 0.0;
 	%>
 	장소 :<%=location%>
-	
-	<br> 좌표 : (<%=mLatitude%>,<%=mLongtitude%>)
-	
+	<br> 좌표 : (<%=mLatitude%>,
+	<%=mLongtitude%>)
 	<div id="mainContent">
-		<!-- 지도세팅 -->
 		<div id="map" style="width: 500px; height: 500px;"></div>
 		<script>
 			settingMap();
 		</script>
-		
 		<div>
-			<!-- 카테고리 선택 div -->
 			<div id="category">
 				<form action="f_filtering.jsp" method="get">
 					음식<input type="checkbox" name="cateCheck" value="c_food">
@@ -189,8 +185,6 @@
 					<input type="submit" name="bt_confirm" value="해당조건으로 검색">
 				</form>
 			</div>
-			
-			<!-- 장소 입력 div -->
 			<div id="location">
 				<form action="f_savecourse.jsp" method="post">
 					1번 장소 : <input type="text" name="loc1"><br>
@@ -202,8 +196,6 @@
 				</form>
 			</div>
 		</div>
-		
-		<!-- 저장데이트 코스 보기 -->
 		<a href="mypage.jsp">내 기록 보기</a>
 	</div>
 	<br>

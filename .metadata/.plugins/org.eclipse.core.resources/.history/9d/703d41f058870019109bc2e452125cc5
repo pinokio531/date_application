@@ -6,12 +6,7 @@
     padding: 50px 0;
     background-color: pink;
 }
-#maincontent{
-	display: flex;
-}
-#divbt{
-	display: flex;
-}
+
 .footer{
     padding: 50px 0;
     background-color: pink;

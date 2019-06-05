@@ -20,7 +20,7 @@
 			<div class="login">
 					<h1>login</h1>
 					아이디 &nbsp;&nbsp;&nbsp; <input name="id"><br>
-					비밀번호 &nbsp;&nbsp;<input type="password" name="passwd"><br>
+					비밀번호 &nbsp;&nbsp;<input name="passwd"><br>
 	
 					<div class="button">
 						<input type="submit" value="로그인">
