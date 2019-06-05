@@ -1,0 +1,20 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+    <%@ page  import="java.util.*" %>
+<%@ page errorPage = "error/errorpage.jsp" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<%!
+String[] categoryList;%>
+<% categoryList = request.getParameterValues("cateCheck");
+for(String val : categoryList){
+	out.print(val + "<br>");
+}
+%>
+</body>
+</html>

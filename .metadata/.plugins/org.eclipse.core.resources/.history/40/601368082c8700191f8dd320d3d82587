@@ -1,0 +1,28 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+    <%@ page  import="java.util.*" %>
+<%@ page errorPage = "error/errorpage.jsp" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<%!
+String[] categoryList;
+String locationName = "";
+ArrayList<String> alist = new ArrayList<>();%>
+<% categoryList = request.getParameterValues("cateCheck");
+for(String val : categoryList){
+	alist.add(val);
+}
+%>
+<%=locationName %>
+<%
+request.setAttribute("location", locationName);
+request.setAttribute("checked", alist);
+pageContext.forward("mainPage.jsp");
+%>
+</body>
+</html>

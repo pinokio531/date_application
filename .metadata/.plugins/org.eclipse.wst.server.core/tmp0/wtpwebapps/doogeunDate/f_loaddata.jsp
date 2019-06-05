@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <% request.setCharacterEncoding("utf-8"); %>
 <%@ page import ="java.sql.*" %>
-<%@ page errorPage = "error/errorpage.jsp" %>
+<%@ page  import="java.util.*" %>
 <%!
 	String location = "구월동";
 	String driver="com.mysql.jdbc.Driver";//mysql jdbc드라이버(필수)
@@ -21,14 +21,18 @@
 	
 	String query3="SELECT * FROM villageData";
 	String vName = "init";
+	String[] categoryList = null;
 	ResultSet rset = null;
 	PreparedStatement pstmt2 = null;
+	String sValues = "";
 	%>
-<%
+	<script>
+	<% 
 	location = (String) request.getAttribute("location");
+	categoryList = (String[]) request.getAttribute("category");
 	Class.forName(driver);//JDBC드라이버가 실제로 적용되는 부분
 	con = DriverManager.getConnection(url, dbId, dbPw);
-pstmt2 = con.prepareStatement(query3);
+	pstmt2 = con.prepareStatement(query3);
 	
 	rset=pstmt2.executeQuery();
 	//////////////////////
@@ -52,7 +56,5 @@ pstmt2 = con.prepareStatement(query3);
 			
 		}
 	}
-	
-
-	
 	%>
+	</script>
