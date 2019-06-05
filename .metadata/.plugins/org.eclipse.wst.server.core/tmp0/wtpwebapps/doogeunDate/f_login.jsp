@@ -16,6 +16,7 @@
 	Connection con = null;
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
+	String[] categoryList = {"c_food", "c_smallshop", "c_build", "c_service", "c_educate", "c_visit", "c_medical", "c_tour"};
 	%>
 <%
 	String id = request.getParameter("id");
@@ -33,6 +34,7 @@
 		if(passwd.equals(rs.getString("passwd"))){
 			session.setAttribute("id",id);
 			request.setAttribute("location", "구월동");
+			request.setAttribute("category", categoryList);
 			pageContext.forward("mainPage.jsp");
 			//response.sendRedirect("mainPage.jsp");
 	} else {

@@ -89,7 +89,7 @@
 									if(aaaa.equals("c_food")){%>
 										if("<%=category%>" == "음식"){
 											console.log("들어옴");
-											makeButton("<%= category%>", "<%=shopname%>", map, <%= rs2la %>, <%= rs2lo %>);
+											makeButton(<%= category%>, <%=shopname%>, map, <%= rs2la %>, <%= rs2lo %>);
 											}
 										<%
 										}
@@ -97,20 +97,20 @@
 										
 										if("<%=category%>" == "소매"){
 											console.log("들어옴");
-											makeButton("<%= category%>", "<%=shopname%>", map, <%= rs2la %>, <%= rs2lo %>);
+											makeButton(<%= category%>, <%=shopname%>, map, <%= rs2la %>, <%= rs2lo %>);
 											}
 										<%
 										}
 									else if(aaaa.equals("c_build")){%>
 										if("<%=category%>" == "부동산"){
-											makeButton("<%= category%>", "<%=shopname%>", map, <%= rs2la %>, <%= rs2lo %>);
+											makeButton(<%= category%>, <%=shopname%>, map, <%= rs2la %>, <%= rs2lo %>);
 											}
 										<%
 										}
 									else if(aaaa.equals("c_service")){%>
 										if("<%=category%>" == "생활서비스"){
 											var jbBtn = document.createElement('input');
-											makeButton("<%= category%>", "<%=shopname%>", map, <%= rs2la %>, <%= rs2lo %>);
+											makeButton(<%= category%>, <%=shopname%>, map, <%= rs2la %>, <%= rs2lo %>);
 										
 											}
 										<%
@@ -118,28 +118,28 @@
 									else if(aaaa.equals("c_educate")){%>
 										if("<%=category%>" == "학문/교육"){
 											var jbBtn = document.createElement('input');
-											makeButton("<%= category%>", "<%=shopname%>", map, <%= rs2la %>, <%= rs2lo %>);
+											makeButton(<%= category%>, <%=shopname%>, map, <%= rs2la %>, <%= rs2lo %>);
 											
 											}
 										<%
 										}
 									else if(aaaa.equals("c_visit")){%>
 										if("<%=category%>" == "숙박"){
-											makeButton("<%= category%>", "<%=shopname%>", map, <%= rs2la %>, <%= rs2lo %>);
+											makeButton(<%= category%>, <%=shopname%>, map, <%= rs2la %>, <%= rs2lo %>);
 											
 											}
 										<%
 										}
 									else if(aaaa.equals("c_medical")){%>
 										if("<%=category%>" == "의료"){
-											makeButton("<%= category%>", "<%=shopname%>", map, <%= rs2la %>, <%= rs2lo %>);
+											makeButton(<%= category%>, <%=shopname%>, map, <%= rs2la %>, <%= rs2lo %>);
 											
 											}
 										<%
 										}
 									else if(aaaa.equals("c_tour")){%>
 										if("<%=category%>" == "관광/여가/오락"){
-											makeButton("<%= category%>", "<%=shopname%>", map, <%= rs2la %>, <%= rs2lo %>);
+											makeButton(<%= category%>, <%=shopname%>, map, <%= rs2la %>, <%= rs2lo %>);
 								
 										}
 									<%}

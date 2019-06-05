@@ -15,8 +15,7 @@
 		Double rs2la = 0.0;
 		String shopname = "";
 		String category = "";
-		int filter_size = 0;
-		String[] categoryAll = {"c_food", "c_smallshop", "c_build", "c_service", "c_educate", "c_visit", "c_medical", "c_tour"};%>
+		int filter_size = 0;%>
 <script>
 		var markers = [];
 		window.onload = function () {
@@ -49,18 +48,6 @@
 		function hideMarkers() {
 			setMarkers(null);
 		}
-		function makeButton(ct, sn, map, la, lo){
-			var jbBtn = document.createElement('input');
-			jbBtn.type = 'button';
-			jbBtn.value = "<" + ct +"> " + sn;
-			jbBtn.id = "shopInfo";
-			jbBtn.addEventListener("mouseover", function () {
-				bt_shop_over_event(map, la, lo);
-			}, false);
-			jbBtn.addEventListener("mouseout", hideMarkers);
-
-			document.body.appendChild(jbBtn);
-		}
 		function settingMap() {
 			var container = document.getElementById('map');
 			var options = {
@@ -87,9 +74,19 @@
 						<%for(int val= 0; val < filter_size; val++){
 							String aaaa = categoryList[val];
 									if(aaaa.equals("c_food")){%>
+									var bx_check = document.getElementByName("cateCheck").value;
 										if("<%=category%>" == "음식"){
 											console.log("들어옴");
-											makeButton("<%= category%>", "<%=shopname%>", map, <%= rs2la %>, <%= rs2lo %>);
+											var jbBtn = document.createElement('input');
+											jbBtn.type = 'button';
+											jbBtn.value = "<<%= category%>> <%=shopname%>";
+											jbBtn.id = "shopInfo";
+											jbBtn.addEventListener("mouseover", function () {
+												bt_shop_over_event(map, <%= rs2la %>, <%= rs2lo %>);
+											}, false);
+											jbBtn.addEventListener("mouseout", hideMarkers);
+			
+											document.body.appendChild(jbBtn);
 											}
 										<%
 										}
@@ -97,20 +94,46 @@
 										
 										if("<%=category%>" == "소매"){
 											console.log("들어옴");
-											makeButton("<%= category%>", "<%=shopname%>", map, <%= rs2la %>, <%= rs2lo %>);
+											var jbBtn = document.createElement('input');
+											jbBtn.type = 'button';
+											jbBtn.value = "<<%= category%>> <%=shopname%>";
+											jbBtn.id = "shopInfo";
+											jbBtn.addEventListener("mouseover", function () {
+												bt_shop_over_event(map, <%= rs2la %>, <%= rs2lo %>);
+											}, false);
+											jbBtn.addEventListener("mouseout", hideMarkers);
+			
+											document.body.appendChild(jbBtn);
 											}
 										<%
 										}
 									else if(aaaa.equals("c_build")){%>
 										if("<%=category%>" == "부동산"){
-											makeButton("<%= category%>", "<%=shopname%>", map, <%= rs2la %>, <%= rs2lo %>);
+											var jbBtn = document.createElement('input');
+											jbBtn.type = 'button';
+											jbBtn.value = "<<%= category%>> <%=shopname%>";
+											jbBtn.id = "shopInfo";
+											jbBtn.addEventListener("mouseover", function () {
+												bt_shop_over_event(map, <%= rs2la %>, <%= rs2lo %>);
+											}, false);
+											jbBtn.addEventListener("mouseout", hideMarkers);
+			
+											document.body.appendChild(jbBtn);
 											}
 										<%
 										}
 									else if(aaaa.equals("c_service")){%>
 										if("<%=category%>" == "생활서비스"){
 											var jbBtn = document.createElement('input');
-											makeButton("<%= category%>", "<%=shopname%>", map, <%= rs2la %>, <%= rs2lo %>);
+											jbBtn.type = 'button';
+											jbBtn.value = "<<%= category%>> <%=shopname%>";
+											jbBtn.id = "shopInfo";
+											jbBtn.addEventListener("mouseover", function () {
+												bt_shop_over_event(map, <%= rs2la %>, <%= rs2lo %>);
+											}, false);
+											jbBtn.addEventListener("mouseout", hideMarkers);
+			
+											document.body.appendChild(jbBtn);
 										
 											}
 										<%
@@ -118,31 +141,66 @@
 									else if(aaaa.equals("c_educate")){%>
 										if("<%=category%>" == "학문/교육"){
 											var jbBtn = document.createElement('input');
-											makeButton("<%= category%>", "<%=shopname%>", map, <%= rs2la %>, <%= rs2lo %>);
+											jbBtn.type = 'button';
+											jbBtn.value = "<<%= category%>> <%=shopname%>";
+											jbBtn.id = "shopInfo";
+											jbBtn.addEventListener("mouseover", function () {
+												bt_shop_over_event(map, <%= rs2la %>, <%= rs2lo %>);
+											}, false);
+											jbBtn.addEventListener("mouseout", hideMarkers);
+			
+											document.body.appendChild(jbBtn);
 											
 											}
 										<%
 										}
 									else if(aaaa.equals("c_visit")){%>
 										if("<%=category%>" == "숙박"){
-											makeButton("<%= category%>", "<%=shopname%>", map, <%= rs2la %>, <%= rs2lo %>);
+											var jbBtn = document.createElement('input');
+											jbBtn.type = 'button';
+											jbBtn.value = "<<%= category%>> <%=shopname%>";
+											jbBtn.id = "shopInfo";
+											jbBtn.addEventListener("mouseover", function () {
+												bt_shop_over_event(map, <%= rs2la %>, <%= rs2lo %>);
+											}, false);
+											jbBtn.addEventListener("mouseout", hideMarkers);
+			
+											document.body.appendChild(jbBtn);
 											
 											}
 										<%
 										}
 									else if(aaaa.equals("c_medical")){%>
 										if("<%=category%>" == "의료"){
-											makeButton("<%= category%>", "<%=shopname%>", map, <%= rs2la %>, <%= rs2lo %>);
+											var jbBtn = document.createElement('input');
+											jbBtn.type = 'button';
+											jbBtn.value = "<<%= category%>> <%=shopname%>";
+											jbBtn.id = "shopInfo";
+											jbBtn.addEventListener("mouseover", function () {
+												bt_shop_over_event(map, <%= rs2la %>, <%= rs2lo %>);
+											}, false);
+											jbBtn.addEventListener("mouseout", hideMarkers);
+			
+											document.body.appendChild(jbBtn);
 											
 											}
 										<%
 										}
 									else if(aaaa.equals("c_tour")){%>
 										if("<%=category%>" == "관광/여가/오락"){
-											makeButton("<%= category%>", "<%=shopname%>", map, <%= rs2la %>, <%= rs2lo %>);
-								
-										}
-									<%}
+											var jbBtn = document.createElement('input');
+											jbBtn.type = 'button';
+											jbBtn.value = "<<%= category%>> <%=shopname%>";
+			jbBtn.id = "shopInfo";
+			jbBtn.addEventListener("mouseover", function() {
+				bt_shop_over_event(map,<%=rs2la%>,<%=rs2lo%>);
+			}, false);
+			jbBtn.addEventListener("mouseout", hideMarkers);
+
+			document.body.appendChild(jbBtn);
+
+		}
+<%}
 					}
 				}
 
@@ -154,7 +212,8 @@
 <body>
 	<%!Double lo = 0.0;
 	Double la = 0.0;%>
-	장소 : <%=location%>
+	장소 :
+	<%=location%>
 	<br> 좌표 : (<%=mLatitude%>,
 	<%=mLongtitude%>)
 	<div id="mainContent">

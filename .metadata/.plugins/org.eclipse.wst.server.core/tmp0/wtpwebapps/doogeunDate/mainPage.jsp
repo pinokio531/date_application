@@ -1,22 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <html>
 
 <head>
-	<meta charset="UTF-8">
-	<title>두근두근 데이트</title>
-	<link rel="stylesheet" type="text/css" href="style/menu.css" />
-	<script type="text/javascript"
-		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8d9fa66b5a57ed1782dfb50131b06dfd"></script>
-	<%@include file = "f_loaddata.jsp" %>
-	<%! Double rslo = 0.0;
+<meta charset="UTF-8">
+<title>두근두근 데이트</title>
+<link rel="stylesheet" type="text/css" href="style/menu.css" />
+<script type="text/javascript"
+	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8d9fa66b5a57ed1782dfb50131b06dfd"></script>
+<%@include file="f_loaddata.jsp"%>
+<%! Double rslo = 0.0;
 		Double rsla = 0.0;
 		Double rs2lo = 0.0;
 		Double rs2la = 0.0;
 		String shopname = "";
 		String category = "";
-		int filter_size = 0;%>
-	<script>
+		int filter_size = 0;
+		String[] categoryAll = {"c_food", "c_smallshop", "c_build", "c_service", "c_educate", "c_visit", "c_medical", "c_tour"};%>
+<script>
 		var markers = [];
 		window.onload = function () {
 		}
@@ -48,6 +49,18 @@
 		function hideMarkers() {
 			setMarkers(null);
 		}
+		function makeButton(ct, sn, map, la, lo){
+			var jbBtn = document.createElement('input');
+			jbBtn.type = 'button';
+			jbBtn.value = "<" + ct +"> " + sn;
+			jbBtn.id = "shopInfo";
+			jbBtn.addEventListener("mouseover", function () {
+				bt_shop_over_event(map, la, lo);
+			}, false);
+			jbBtn.addEventListener("mouseout", hideMarkers);
+
+			document.body.appendChild(jbBtn);
+		}
 		function settingMap() {
 			var container = document.getElementById('map');
 			var options = {
@@ -76,175 +89,102 @@
 									if(aaaa.equals("c_food")){%>
 										if("<%=category%>" == "음식"){
 											console.log("들어옴");
-											var jbBtn = document.createElement('input');
-											jbBtn.type = 'button';
-											jbBtn.value = "<<%= category%>> <%=shopname%>";
-											jbBtn.id = "shopInfo";
-											jbBtn.addEventListener("mouseover", function () {
-												bt_shop_over_event(map, <%= rs2la %>, <%= rs2lo %>);
-											}, false);
-											jbBtn.addEventListener("mouseout", hideMarkers);
-			
-											document.body.appendChild(jbBtn);
+											makeButton("<%= category%>", "<%=shopname%>", map, <%= rs2la %>, <%= rs2lo %>);
 											}
-										<%break;
+										<%
 										}
 									else if(aaaa.equals("c_smallshop")){%>
 										
 										if("<%=category%>" == "소매"){
 											console.log("들어옴");
-											var jbBtn = document.createElement('input');
-											jbBtn.type = 'button';
-											jbBtn.value = "<<%= category%>> <%=shopname%>";
-											jbBtn.id = "shopInfo";
-											jbBtn.addEventListener("mouseover", function () {
-												bt_shop_over_event(map, <%= rs2la %>, <%= rs2lo %>);
-											}, false);
-											jbBtn.addEventListener("mouseout", hideMarkers);
-			
-											document.body.appendChild(jbBtn);
+											makeButton("<%= category%>", "<%=shopname%>", map, <%= rs2la %>, <%= rs2lo %>);
 											}
-										<%break;
+										<%
 										}
 									else if(aaaa.equals("c_build")){%>
 										if("<%=category%>" == "부동산"){
-											var jbBtn = document.createElement('input');
-											jbBtn.type = 'button';
-											jbBtn.value = "<<%= category%>> <%=shopname%>";
-											jbBtn.id = "shopInfo";
-											jbBtn.addEventListener("mouseover", function () {
-												bt_shop_over_event(map, <%= rs2la %>, <%= rs2lo %>);
-											}, false);
-											jbBtn.addEventListener("mouseout", hideMarkers);
-			
-											document.body.appendChild(jbBtn);
+											makeButton("<%= category%>", "<%=shopname%>", map, <%= rs2la %>, <%= rs2lo %>);
 											}
-										<%break;
+										<%
 										}
 									else if(aaaa.equals("c_service")){%>
 										if("<%=category%>" == "생활서비스"){
 											var jbBtn = document.createElement('input');
-											jbBtn.type = 'button';
-											jbBtn.value = "<<%= category%>> <%=shopname%>";
-											jbBtn.id = "shopInfo";
-											jbBtn.addEventListener("mouseover", function () {
-												bt_shop_over_event(map, <%= rs2la %>, <%= rs2lo %>);
-											}, false);
-											jbBtn.addEventListener("mouseout", hideMarkers);
-			
-											document.body.appendChild(jbBtn);
+											makeButton("<%= category%>", "<%=shopname%>", map, <%= rs2la %>, <%= rs2lo %>);
 										
 											}
-										<%break;
+										<%
 										}
 									else if(aaaa.equals("c_educate")){%>
 										if("<%=category%>" == "학문/교육"){
 											var jbBtn = document.createElement('input');
-											jbBtn.type = 'button';
-											jbBtn.value = "<<%= category%>> <%=shopname%>";
-											jbBtn.id = "shopInfo";
-											jbBtn.addEventListener("mouseover", function () {
-												bt_shop_over_event(map, <%= rs2la %>, <%= rs2lo %>);
-											}, false);
-											jbBtn.addEventListener("mouseout", hideMarkers);
-			
-											document.body.appendChild(jbBtn);
+											makeButton("<%= category%>", "<%=shopname%>", map, <%= rs2la %>, <%= rs2lo %>);
 											
 											}
-										<%break;
+										<%
 										}
 									else if(aaaa.equals("c_visit")){%>
 										if("<%=category%>" == "숙박"){
-											var jbBtn = document.createElement('input');
-											jbBtn.type = 'button';
-											jbBtn.value = "<<%= category%>> <%=shopname%>";
-											jbBtn.id = "shopInfo";
-											jbBtn.addEventListener("mouseover", function () {
-												bt_shop_over_event(map, <%= rs2la %>, <%= rs2lo %>);
-											}, false);
-											jbBtn.addEventListener("mouseout", hideMarkers);
-			
-											document.body.appendChild(jbBtn);
+											makeButton("<%= category%>", "<%=shopname%>", map, <%= rs2la %>, <%= rs2lo %>);
 											
 											}
-										<%break;
+										<%
 										}
 									else if(aaaa.equals("c_medical")){%>
 										if("<%=category%>" == "의료"){
-											var jbBtn = document.createElement('input');
-											jbBtn.type = 'button';
-											jbBtn.value = "<<%= category%>> <%=shopname%>";
-											jbBtn.id = "shopInfo";
-											jbBtn.addEventListener("mouseover", function () {
-												bt_shop_over_event(map, <%= rs2la %>, <%= rs2lo %>);
-											}, false);
-											jbBtn.addEventListener("mouseout", hideMarkers);
-			
-											document.body.appendChild(jbBtn);
+											makeButton("<%= category%>", "<%=shopname%>", map, <%= rs2la %>, <%= rs2lo %>);
 											
 											}
-										<%break;
+										<%
 										}
 									else if(aaaa.equals("c_tour")){%>
 										if("<%=category%>" == "관광/여가/오락"){
-											var jbBtn = document.createElement('input');
-											jbBtn.type = 'button';
-											jbBtn.value = "<<%= category%>> <%=shopname%>";
-											jbBtn.id = "shopInfo";
-											jbBtn.addEventListener("mouseover", function () {
-												bt_shop_over_event(map, <%= rs2la %>, <%= rs2lo %>);
-											}, false);
-											jbBtn.addEventListener("mouseout", hideMarkers);
-			
-											document.body.appendChild(jbBtn);
-											
-							}
-										<%break;
+											makeButton("<%= category%>", "<%=shopname%>", map, <%= rs2la %>, <%= rs2lo %>);
+								
 										}
-						}
+									<%}
 					}
-				
-			}
-			%>
-			
-		}
-	</script>
+				}
+
+			}%>
+	}
+</script>
 </head>
 
 <body>
-	<%! Double lo = 0.0;
-		Double la = 0.0;%>
-		장소 : <%= location %> <br>
-	좌표 : (<%= mLatitude %>, <%= mLongtitude %>)
+	<%!Double lo = 0.0;
+	Double la = 0.0;%>
+	장소 : <%=location%>
+	<br> 좌표 : (<%=mLatitude%>,
+	<%=mLongtitude%>)
 	<div id="mainContent">
-		<div id="map" style="width:500px; height:500px;"></div>
+		<div id="map" style="width: 500px; height: 500px;"></div>
 		<script>
 			settingMap();
 		</script>
 		<div>
 			<div id="category">
-			<form action="f_filtering.jsp" method="get">
-				전체<input type="checkbox" name="cateCheck" value="c_all">
-				음식<input type="checkbox" name="cateCheck" value="c_food">
-				소매<input type="checkbox" name="cateCheck" value="c_smallshop">
-				부동산<input type="checkbox" name="cateCheck" value="c_build">
-				생활서비스<input type="checkbox" name="cateCheck" value="c_service">
-				학문/교육<input type="checkbox" name="cateCheck" value="c_educate">
-				숙박<input type="checkbox" name="cateCheck" value="c_visit">
-				의료<input type="checkbox" name="cateCheck" value="c_medical">
-				관광/여가/오락<input type="checkbox" name="cateCheck" value="c_tour">
-				<input type="hidden" name="location" value="<%= location %>">
-				<input type="submit" name="bt_confirm" value="해당조건으로 검색">
-			</form>
+				<form action="f_filtering.jsp" method="get">
+					음식<input type="checkbox" name="cateCheck" value="c_food">
+					소매<input type="checkbox" name="cateCheck" value="c_smallshop">
+					부동산<input type="checkbox" name="cateCheck" value="c_build">
+					생활서비스<input type="checkbox" name="cateCheck" value="c_service">
+					학문/교육<input type="checkbox" name="cateCheck" value="c_educate">
+					숙박<input type="checkbox" name="cateCheck" value="c_visit">
+					의료<input type="checkbox" name="cateCheck" value="c_medical">
+					관광/여가/오락<input type="checkbox" name="cateCheck" value="c_tour">
+					<input type="hidden" name="location" value="<%=location%>">
+					<input type="submit" name="bt_confirm" value="해당조건으로 검색">
+				</form>
 			</div>
 			<div id="location">
 				<form action="f_savecourse.jsp" method="post">
-					1번 장소 : <input type="text" name="loc1"><br><br>
-					2번 장소 : <input type="text" name="loc2"><br><br>
-					3번 장소 : <input type="text" name="loc3"><br><br>
-					4번 장소 : <input type="text" name="loc4"><br><br>
-					5번 장소 : <input type="text" name="loc5"><br><br>
-					<input type="submit" value="확정">
+					1번 장소 : <input type="text" name="loc1"><br>
+					<br> 2번 장소 : <input type="text" name="loc2"><br>
+					<br> 3번 장소 : <input type="text" name="loc3"><br>
+					<br> 4번 장소 : <input type="text" name="loc4"><br>
+					<br> 5번 장소 : <input type="text" name="loc5"><br>
+					<br> <input type="submit" value="확정">
 				</form>
 			</div>
 		</div>
@@ -253,23 +193,25 @@
 	<br>
 	<br>
 	<div>
-	<%
-	if(rset.next()){
-		String bt_first = rset.getString("villageName");
-	%>
+		<%
+			if (rset.next()) {
+				String bt_first = rset.getString("villageName");
+		%>
 
 		<form action="f_bt_location.jsp" method="get">
-			<input type="submit" name="clicked_location" value=<%=bt_first %>>
+			<input type="submit" name="clicked_location" value=<%=bt_first%>>
 		</form>
 		<%
-		while(rset.next()){
-			vName = rset.getString("villageName");%>
-			<form action="f_bt_location.jsp" method="get">
-				<input type="submit" name="clicked_location" value="<%=vName %>">
-			</form>
+			while (rset.next()) {
+					vName = rset.getString("villageName");
+		%>
+		<form action="f_bt_location.jsp" method="get">
+			<input type="submit" name="clicked_location" value="<%=vName%>">
+		</form>
 		<%
-		}
-	}%>
+			}
+			}
+		%>
 	</div>
 </body>
 

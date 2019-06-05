@@ -16,7 +16,7 @@
 	Connection con = null;
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
-	String[] categoryList = {"c_food", "c_smallshop", "c_build", "c_service", "c_educate", "c_visit", "c_medical", "c_tour"};
+	String[] categoryList = {"c_smallshop", "c_build", "c_service", "c_educate", "c_visit", "c_medical", "c_tour"};
 	%>
 <%
 	String id = request.getParameter("id");

@@ -14,7 +14,8 @@
 	<script>
 <%categoryList = request.getParameterValues("cateCheck");
 			for (String val : categoryList) {%>
-console.log("<%=val%>")
+console.log("<%=val%>
+		")
 	<%}
 			String location = request.getParameter(locationName);
 			request.setAttribute("location", location);
